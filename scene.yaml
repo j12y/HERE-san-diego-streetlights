@@ -36,7 +36,7 @@ sources:
 
     xyz_lamps:
         type: GeoJSON
-        url: https://xyz.api.here.com/hub/spaces/3nlJoz5b/tile/web/{z}_{x}_{y}
+        url: https://xyz.api.here.com/hub/spaces/gZHiOVdo/tile/web/{z}_{x}_{y}
         max_zoom: 17
         url_params:
             access_token: AB9di0Bpr3GBxODEMbb5PWU
@@ -97,7 +97,8 @@ layers:
         data: { source: xyz_osm }
         draw:
             polygons:
-                order: function() { return feature.sort_rank; }
+                order: function() { return feature.sort_rank || 0; }
+                blend: overlay
                 color: |
                     function () {
                         var h = feature.height || 20;
@@ -113,5 +114,6 @@ layers:
             _streetlight:
                 order: function() { return feature.sort_rank; }
                 color: [0.949, 0.953, 0.557, 1.00]
+                interactive: true
 
 
