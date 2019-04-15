@@ -26,6 +26,7 @@ function main(lat, lon, zoom) {
         events: {
             click: handleFeatureClick
         },
+        selectionRadius: 20
     });
     tangram.addTo(map);
 
