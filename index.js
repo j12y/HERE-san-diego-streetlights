@@ -9,5 +9,7 @@ function main(lat, lon, zoom) {
     map.setView([lat, lon], zoom);
 }
 
-// Gaslamp Quarter
-main(32.71151, -117.15897, 15);
+// San Diego Downtown
+main(32.714, -117.170, 15);
+
+
